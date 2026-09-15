@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import Reveal from './Reveal'
 import Magnetic from './Magnetic'
 import Parallax from './Parallax'
-import ScrambleText from './ScrambleText'
 import { useCursor } from './CustomCursor'
 
 const sectionEntrance = {
@@ -23,7 +22,7 @@ export default function Publication() {
       className="max-w-content mx-auto px-6 py-24 scroll-mt-20"
     >
       <Reveal>
-        <h2 className="font-display font-bold text-3xl text-ink mb-12"><ScrambleText text="Publication" /></h2>
+        <h2 className="font-display font-bold text-3xl text-ink mb-12">Publication</h2>
       </Reveal>
       <Parallax speed={0.08}>
       <Reveal delay={0.15}>

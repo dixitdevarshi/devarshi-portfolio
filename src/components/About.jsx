@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import Reveal from './Reveal'
 import Parallax from './Parallax'
-import ScrambleText from './ScrambleText'
 import photo from '../assets/headshot.jpg'
 
 const sectionEntrance = {
@@ -19,7 +18,7 @@ export default function About() {
       variants={sectionEntrance}
       className="max-w-content mx-auto px-6 py-24 scroll-mt-20 grid md:grid-cols-[1fr_1.3fr] gap-16 items-center"
     >
-      <Parallax speed={0.12}>
+      <Parallax speed={0.12} className="order-2 md:order-1">
         <Reveal>
           <img
             src={photo}
@@ -28,18 +27,22 @@ export default function About() {
           />
         </Reveal>
       </Parallax>
-      <Reveal delay={0.15}>
-        <h2 className="font-display font-bold text-3xl text-ink mb-6"><ScrambleText text="About me" /></h2>
+      <Reveal delay={0.15} className="order-1 md:order-2">
+        <h2 className="font-display font-bold text-3xl text-ink mb-6">About me</h2>
         <p className="text-ink/80 font-body leading-relaxed">
-          I have spent the past two years building AI systems, automation pipelines, and
-          knowledge management tools, where the interesting part was never just getting a
-          model to work. It was making sure the outputs could be trusted, that the system
-          stayed up, and that someone else could understand what I had done and why.
+          I spend most of my time getting AI systems from "works on my laptop" to
+          something that actually stays up and does its job. Lately that's meant
+          building a support ticket pipeline that grades its own accuracy, and a
+          defect detector that has to get things right without ever seeing a bad
+          example during training.
         </p>
         <p className="mt-4 text-ink/80 font-body leading-relaxed">
-          Across my projects I have worked with agentic AI, MCP server integration, LLM
-          APIs, workflow orchestration, and end-to-end deployment. I tend to spend as much
-          time on evaluation and documentation as on the actual build.
+          Before Bielefeld I did my undergrad in AI and Data Science back in India.
+          Somewhere along the way I got hooked on the parts most people skip, writing
+          evaluation scripts, checking whether a model is actually right instead of
+          just assuming it is, documenting things well enough that I don't have to
+          explain them twice. If a project doesn't already have a way to check
+          itself, that's usually the first thing I build.
         </p>
         <p className="mt-6 font-mono text-xs text-muted">
           M.Sc. Intelligent Interactive Systems, Universität Bielefeld &middot; Bielefeld, Germany

@@ -1,7 +1,6 @@
 import { motion, useSpring, useTransform } from 'framer-motion'
 import Magnetic from './Magnetic'
 import Parallax from './Parallax'
-import ScrambleText from './ScrambleText'
 import { useCursor } from './CustomCursor'
 import { useWindowMouse } from '../lib/useWindowMouse'
 import headshot from '../assets/headshot.jpg'
@@ -53,7 +52,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="font-display font-black text-6xl sm:text-7xl leading-[0.95] tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-300"
             >
-              <ScrambleText text={line} />
+              {line}
             </motion.h1>
           ))}
         </div>

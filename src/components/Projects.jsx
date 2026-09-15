@@ -6,7 +6,6 @@ import ProjectModal from './ProjectModal'
 import Reveal from './Reveal'
 import Magnetic from './Magnetic'
 import { useCursor } from './CustomCursor'
-import ScrambleText from './ScrambleText'
 
 const sectionEntrance = {
   hidden: { opacity: 0, y: 80 },
@@ -31,7 +30,7 @@ export default function Projects() {
       className="max-w-content mx-auto px-6 py-24 scroll-mt-20"
     >
       <Reveal>
-        <h2 className="font-display font-bold text-3xl text-ink mb-12"><ScrambleText text="Projects" /></h2>
+        <h2 className="font-display font-bold text-3xl text-ink mb-12">Projects</h2>
       </Reveal>
       <motion.div variants={container} className="grid sm:grid-cols-2 gap-6">
         {projects.map((project) => (

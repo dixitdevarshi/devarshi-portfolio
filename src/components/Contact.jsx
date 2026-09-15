@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import Magnetic from './Magnetic'
 import ContactForm from './ContactForm'
 import Reveal from './Reveal'
-import ScrambleText from './ScrambleText'
+
 
 const sectionEntrance = {
   hidden: { opacity: 0, y: 80 },
@@ -37,7 +37,7 @@ export default function Contact() {
 >
       <Reveal>
         <h2 className="font-display font-black text-4xl sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-300">
-  <ScrambleText text="Let's talk." />
+  "Let's talk."
 </h2>
         <p className="mt-4 max-w-md text-muted font-body">
           Open to AI/ML Werkstudent roles and internships in Germany.

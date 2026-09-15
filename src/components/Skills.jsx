@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import Reveal from './Reveal'
 import Marquee from './Marquee'
 import skills from '../data/skills'
-import ScrambleText from './ScrambleText'
 
 const sectionEntrance = {
   hidden: { opacity: 0, y: 80 },
@@ -26,7 +25,7 @@ export default function Skills() {
     >
       <div className="max-w-content mx-auto px-6">
         <Reveal>
-          <h2 className="font-display font-bold text-3xl text-ink mb-12"><ScrambleText text="Skills" /></h2>
+          <h2 className="font-display font-bold text-3xl text-ink mb-12">Skills</h2>
         </Reveal>
       </div>
       <div className="space-y-6">
