@@ -1,16 +1,41 @@
-# React + Vite
+# Devarshi Dixit — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site built with React, Vite, and Tailwind CSS. Single-page scroll layout covering an intro, projects, a publication, skills, and a contact form.
 
-Currently, two official plugins are available:
+**Live site:** [devarshi-portfolio-sepia.vercel.app](https://devarshi-portfolio-sepia.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+- React + Vite
+- Tailwind CSS
+- Framer Motion (animations, scroll effects, cursor)
+- Formspree (contact form delivery)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Running locally
 
-## Expanding the ESLint configuration
+\```bash
+npm install
+npm run dev
+\```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Environment variables
+
+The contact form needs a Formspree endpoint to actually deliver messages. Create a `.env` file in the project root (this file is gitignored and never committed):
+
+\```
+VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/your-form-id
+\```
+
+Get your own endpoint by creating a free form at [formspree.io](https://formspree.io).
+
+## Build
+
+\```bash
+npm run build
+\```
+
+Outputs to `dist/`.
+
+## Deploy
+
+Deployed on Vercel, connected to this repo for automatic deploys on push to `main`. Remember to add `VITE_FORMSPREE_ENDPOINT` as an environment variable in the Vercel project settings, it isn't picked up automatically from `.env`.
