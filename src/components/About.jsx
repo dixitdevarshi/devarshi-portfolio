@@ -78,20 +78,11 @@ export default function About() {
         </h2>
 
         <p className="text-ink/80 font-body leading-relaxed">
-          I spend most of my time getting AI systems from "works on my laptop" to
-          something that actually stays up and does its job. Lately that's meant
-          building a support ticket pipeline that grades its own accuracy, and a
-          defect detector that has to get things right without ever seeing a bad
-          example during training.
+          I spend most of my time turning AI systems from “works on my laptop” into something reliable enough to actually use. Lately, that has meant building a support ticket pipeline with its own evaluation and feedback loop, and a defect detection system that can identify anomalies without seeing defective examples during training.
         </p>
 
         <p className="mt-4 text-ink/80 font-body leading-relaxed">
-          Before Bielefeld I did my undergrad in AI and Data Science back in India.
-          Somewhere along the way I got hooked on the parts most people skip,
-          writing evaluation scripts, checking whether a model is actually right
-          instead of just assuming it is, documenting things well enough that I
-          don't have to explain them twice. If a project doesn't already have a
-          way to check itself, that's usually the first thing I build.
+          Before Bielefeld, I completed my undergraduate degree in AI and Data Science in India. Over time, I became especially interested in the parts that make AI systems dependable: evaluating models properly, understanding where they fail, and building ways to measure whether they are actually improving. If a project doesn’t have a good way to evaluate itself, that’s usually one of the first things I build. 
         </p>
 
         <p className="mt-6 font-mono text-xs text-muted">
