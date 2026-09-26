@@ -7,6 +7,7 @@ const projects = [
     metricLabel: 'urgency accuracy, up from 64%',
     tech: ['n8n', 'FastAPI', 'Claude API', 'PostgreSQL', 'React', 'PyTorch', 'Docker'],
     href: 'https://github.com/dixitdevarshi/ai-ticket-triage',
+    caseStudy: '/projects/ai-ticket-triage',
     details: [
       'n8n monitors a live Gmail inbox; FastAPI classifies topic and urgency independently via the Claude API and drafts replies.',
       'Combines three AI subsystems: a self-trained PatchCore + DINOv2 anomaly model for product photo inspection, Tesseract OCR for scanned documents, and VirusTotal-based link safety checks.',
@@ -22,6 +23,7 @@ const projects = [
     metricLabel: 'mean AUROC, 15 MVTec AD categories',
     tech: ['PyTorch', 'FastAPI', 'React', 'MLflow', 'Docker'],
     href: 'https://github.com/dixitdevarshi/visual-anomaly-detection',
+    caseStudy: '/projects/visual-anomaly-detection',
     details: [
       'DINOv2 ViT-B/14 frozen backbone with PatchCore memory-bank scoring, achieving 0.9781 mean AUROC across all 15 MVTec AD categories with no defect labels required.',
       'Patch-level spatial localization via greedy coreset subsampling and nearest-neighbor distance scoring, producing heatmaps that highlight exact defect locations.',
@@ -33,10 +35,11 @@ const projects = [
     name: 'PaperMind',
     description:
       'Multi-agent RAG system for document intelligence, with MCP-style tool routing, conversational memory, and a GraphRAG layer benchmarked against standard vector retrieval, retrieving across 50+ languages.',
-    metricValue: '0.88',
-    metricLabel: 'RAGAS faithfulness score',
+    metricValue: '0.8824',
+    metricLabel: 'faithfulness, 25-pair evaluation',
     tech: ['LangChain', 'FastAPI', 'ChromaDB', 'Claude API', 'NetworkX', 'Docker'],
     href: 'https://github.com/dixitdevarshi/PaperMind',
+    caseStudy: '/projects/papermind',
     details: [
       'Custom RAGAS evaluation framework on a multilingual ground-truth benchmark: faithfulness 0.88, context precision 1.0, context recall 0.88.',
       'GraphRAG layer built with spaCy NER and NetworkX, benchmarked against standard vector retrieval.',
@@ -48,10 +51,11 @@ const projects = [
     name: 'RoboJEC',
     description:
       'Real-time voice AI assistant with deterministic profession recognition and wake-window filtering. Published at IEEE ICCCMLA 2025. Swapped Whisper large-v3 for faster-whisper to cut response latency.',
-    metricValue: '2-4s',
-    metricLabel: 'response latency, down from 20-30s',
+    metricValue: '3',
+    metricLabel: 'adaptive interview phases',
     tech: ['Python', 'faster-whisper', 'Flask', 'SocketIO'],
     href: 'https://github.com/dixitdevarshi/RoboJEC',
+    caseStudy: '/projects/robojec',
     details: [
       'Real-time voice AI assistant with deterministic profession recognition and wake-window filtering.',
       'Published at IEEE ICCCMLA 2025, co-authored with S. Jain and A. Mishra.',

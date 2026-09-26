@@ -1,41 +1,58 @@
-import { CursorProvider } from './components/CustomCursor'
-import LoadingIntro from './components/LoadingIntro'
-import ScrollProgress from './components/ScrollProgress'
-import Noise from './components/Noise'
-import BackgroundFX from './components/BackgroundFX'
-import TerminalEasterEgg from './components/TerminalEasterEgg'
+import { useEffect } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
+import FeaturedWork from './components/FeaturedWork'
 import About from './components/About'
+import Background from './components/Background'
 import Projects from './components/Projects'
 import Publication from './components/Publication'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
+import Privacy from './components/Privacy'
+import LoadingIntro from './components/LoadingIntro'
+import CaseStudy from './components/CaseStudy'
 
-function App() {
+function Home() {
+  useEffect(() => {
+    if (window.location.hash !== '#projects') return
+    const timer = window.setTimeout(() => {
+      document.getElementById('projects')?.scrollIntoView({ behavior: 'auto', block: 'start' })
+    }, 1500)
+    return () => window.clearTimeout(timer)
+  }, [])
+
   return (
-    <CursorProvider>
+    <>
       <LoadingIntro />
-      <TerminalEasterEgg />
-      <div className="min-h-screen font-body">
-        <Noise />
-        <BackgroundFX />
-        <ScrollProgress />
-        <Nav />
-        <main>
-          <Hero />
-          <About />
-          <Projects />
-          <Publication />
-          <Skills />
-          <Contact />
-        </main>
-        <footer className="max-w-content mx-auto px-6 py-10 text-xs text-muted font-mono">
-          built with React, Vite, Tailwind, and Framer Motion
-        </footer>
-      </div>
-    </CursorProvider>
+      <Nav />
+      <main>
+        <Hero />
+        <FeaturedWork />
+        <About />
+        <Background />
+        <Projects />
+        <Publication />
+        <Skills />
+        <Contact />
+      </main>
+      <footer className="site-footer">
+        <div className="container footer-inner">
+          <p>© {new Date().getFullYear()} Devarshi Dixit</p>
+          <a href="/privacy">Privacy</a>
+        </div>
+      </footer>
+    </>
   )
 }
 
-export default App
+export default function App() {
+  const path = window.location.pathname.replace(/\/$/, '') || '/'
+  const isCaseStudy = ['/projects/ai-ticket-triage', '/projects/visual-anomaly-detection', '/projects/papermind', '/projects/robojec'].includes(path)
+  return (
+    <>
+      {path === '/privacy' ? <Privacy /> : isCaseStudy ? <CaseStudy path={path} /> : <Home />}
+      <Analytics beforeSend={(event) => localStorage.getItem('va-disable') === '1' ? null : event} />
+    </>
+  )
+}

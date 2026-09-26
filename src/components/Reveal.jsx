@@ -1,21 +1,24 @@
-import { motion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 
-const variants = {
-  hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0 },
-}
+export default function Reveal({ children, className = '' }) {
+  const ref = useRef(null)
+  const [visible, setVisible] = useState(false)
 
-export default function Reveal({ children, className = '', delay = 0 }) {
-  return (
-    <motion.div
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: false, margin: '-80px' }}
-      variants={variants}
-      transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  )
+  useEffect(() => {
+    const node = ref.current
+    if (!node) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setVisible(true)
+      return
+    }
+
+    const observer = new IntersectionObserver(([entry]) => {
+      setVisible(entry.isIntersecting)
+    }, { threshold: 0.14, rootMargin: '-4% 0px -10%' })
+
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [])
+
+  return <div ref={ref} className={`reveal ${visible ? 'is-visible' : ''} ${className}`}>{children}</div>
 }
