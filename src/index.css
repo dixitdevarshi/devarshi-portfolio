@@ -12,8 +12,8 @@
   --text: #f3f6fa;
   --muted: #9ca8b8;
   --line: #27313d;
-  --accent: #6ea8fe;
-  --accent-strong: #9bc1ff;
+  --accent: #3AAFA9;
+  --accent-strong: #63C7C2;
   --max: 72rem;
   --header-height: 72px;
 }
@@ -112,7 +112,7 @@ p + p { margin-top: 16px; }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .contact-form label { display: grid; gap: 8px; color: #c7d0dc; font-size: .82rem; font-weight: 600; }
 .contact-form input, .contact-form textarea { width: 100%; padding: 11px 12px; color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: 6px; outline: none; }
-.contact-form input:focus, .contact-form textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(110,168,254,.12); }
+.contact-form input:focus, .contact-form textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(58,175,169,.12); }
 .contact-form textarea { resize: vertical; }
 .contact-form input[type="file"] { color: var(--muted); }
 .optional { color: var(--muted); font-weight: 400; }
@@ -223,8 +223,8 @@ p + p { margin-top: 16px; }
   --text: #F1F5F9;
   --muted: #A7B0BC;
   --line: #26313D;
-  --accent: #5B8DEF;
-  --accent-strong: #78A5F5;
+  --accent: #3AAFA9;
+  --accent-strong: #63C7C2;
 }
 
 .section-alt { background: var(--surface); border-block: 0; }
@@ -485,7 +485,10 @@ p + p { margin-top: 16px; }
 .about-editorial { max-width: 900px; margin-inline: auto; }
 .about-editorial h2 { max-width: 720px; margin-bottom: 32px; }
 .about-copy { max-width: 760px; }
-.about-copy p { font-size: clamp(1rem, 1.5vw, 1.08rem); }
+.about-copy p {
+  color: #98A2AE;
+  font-size: clamp(1rem, 1.5vw, 1.08rem);
+}
 
 .project-entry { grid-template-columns: minmax(0, 1.5fr) minmax(190px, .55fr); }
 .project-index { display: none; }
