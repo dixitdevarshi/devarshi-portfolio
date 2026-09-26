@@ -443,13 +443,28 @@ p + p { margin-top: 16px; }
 .featured-results span { display: block; margin-top: 8px; color: var(--muted); font-size: .72rem; line-height: 1.4; }
 
 .background-heading { display: grid; grid-template-columns: 1fr minmax(260px, 420px); gap: 48px; align-items: end; margin-bottom: 64px; }
-.timeline { position: relative; --timeline-progress: 0%; }
+.timeline {
+  position: relative;
+  --timeline-progress-px: 0px;
+}
 .timeline::before, .timeline::after { content: ""; position: absolute; top: 9px; bottom: 16px; left: 220px; width: 1px; }
 .timeline::before { background: var(--line); }
-.timeline::after { bottom: auto; height: var(--timeline-progress); background: var(--accent); transition: height .12s linear; }
+.timeline::after {
+  bottom: auto;
+  height: var(--timeline-progress-px);
+  background: var(--accent);
+  transition: height .12s linear;
+}
 .timeline-item { position: relative; display: grid; grid-template-columns: 180px 32px minmax(0, 1fr); gap: 24px; min-height: 150px; padding-bottom: 48px; }
 .timeline-date { padding-top: 1px; color: #C8D1DC; font-size: .8rem; font-weight: 600; letter-spacing: .03em; text-align: right; }
 .timeline-dot { position: relative; z-index: 1; width: 9px; height: 9px; margin: 7px auto 0; border: 2px solid var(--accent); border-radius: 50%; background: var(--surface); box-shadow: 0 0 0 5px var(--surface); }
+.timeline-dot {
+  transition: background-color .2s ease, box-shadow .2s ease;
+}
+
+.timeline-dot.is-reached {
+  background: var(--accent);
+}
 .timeline-content { max-width: 650px; padding-bottom: 8px; }
 .timeline-type { margin-bottom: 8px; color: var(--accent-strong); font-size: .7rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
 .timeline-content h3 { font-size: clamp(1.25rem, 2.3vw, 1.7rem); }
@@ -509,22 +524,30 @@ p + p { margin-top: 16px; }
 }
 
 @media (max-width: 600px) {
-  .timeline::before,
-  .timeline::after {
+  .timeline::before {
     display: none;
+  }
+
+  .timeline::after {
+    display: block;
+    left: 6.5px;
+    top: 13.5px;
+    width: 1px;
+    height: var(--timeline-progress-px);
+    max-height: none;
+    background: var(--accent);
   }
 
   .timeline-item:not(:last-child)::after {
     content: "";
     position: absolute;
-    top: 16px;
+    top: 13.5px;
     bottom: -7px;
-    left: 4px;
+    left: 6.5px;
     width: 1px;
-    background: var(--accent);
+    background: var(--line);
   }
 }
-
 /* Case studies */
 .case-header { position: sticky; top: 0; z-index: 20; background: rgba(11,15,20,.985); border-bottom: 1px solid var(--line); }
 .case-nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
