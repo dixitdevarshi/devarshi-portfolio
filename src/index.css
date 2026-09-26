@@ -509,8 +509,20 @@ p + p { margin-top: 16px; }
 }
 
 @media (max-width: 600px) {
-  .timeline::before { height: calc(100% - 44px + 13px); }
-  .timeline::after { max-height: calc(100% - 44px + 13px); }
+  .timeline::before,
+  .timeline::after {
+    display: none;
+  }
+
+  .timeline-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    bottom: -7px;
+    left: 4px;
+    width: 1px;
+    background: var(--accent);
+  }
 }
 
 /* Case studies */
