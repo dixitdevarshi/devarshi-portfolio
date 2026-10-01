@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { X, Github, Linkedin, Mail } from 'lucide-react'
+import { Github, Linkedin, Mail } from 'lucide-react'
 
 const links = [
   { href: '#featured', label: 'Work' },
@@ -55,7 +55,6 @@ export default function Nav() {
 
       <div className={open ? 'mobile-drawer-layer open' : 'mobile-drawer-layer'} onClick={() => setOpen(false)}>
         <aside className={open ? 'mobile-drawer open' : 'mobile-drawer'} onClick={e => e.stopPropagation()}>
-          <button className={open ? 'drawer-close open' : 'drawer-close'} onClick={() => setOpen(false)} aria-label="Close menu"><X size={26} strokeWidth={1.5}/></button>
           <p className="drawer-label">Site Index</p>
           <nav>{links.map((link,i)=><a style={{transitionDelay:open?`${300+i*80}ms`:'0ms'}} key={link.href} href={link.href} onClick={()=>setOpen(false)}>{link.label}</a>)}</nav>
           <p className="drawer-label find">Find Me</p>

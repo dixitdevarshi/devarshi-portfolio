@@ -682,3 +682,79 @@ body::-webkit-scrollbar-thumb:hover { background: rgba(127,127,127,.72); backgro
 .contact-form .button{align-self:flex-start;margin-top:4px;padding:14px 22px;border:1px solid #171715;background:#171715;color:#efeee9;}
 .contact-form .button:hover{background:transparent;color:#171715;}
 @media(max-width:800px){.contact-form{margin-top:18px!important}.contact-grid > div:first-child > p:not(.section-kicker){font-size:1rem;}}
+
+/* Mobile hero hotfix — desktop styles intentionally untouched */
+@media (max-width: 800px) {
+  .editorial-portrait {
+    height: min(62dvh, 560px);
+    max-width: 96vw;
+    bottom: 82px;
+    left: 50%;
+    object-fit: contain;
+    object-position: center bottom;
+  }
+
+  .hero-marquee-wrap { top: 19vh; }
+  .hero-marquee { font-size: 14vh; }
+
+  .floating-socials {
+    display: flex;
+    right: 12px;
+    top: 54%;
+    gap: 8px;
+  }
+  .floating-socials a {
+    width: 36px;
+    height: 36px;
+  }
+  .floating-socials a svg {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+@media (max-width: 520px) {
+  .editorial-portrait {
+    height: min(59dvh, 500px);
+    max-width: 94vw;
+    bottom: 88px;
+    left: 50%;
+  }
+  .hero-marquee-wrap { top: 20vh; }
+  .hero-marquee { font-size: 13vh; }
+  .floating-socials { right: 10px; top: 55%; }
+  .floating-socials a { width: 34px; height: 34px; }
+}
+
+
+/* Navigation hotfix: fixed site header + single mobile close control */
+.editorial-header {
+  position: fixed;
+}
+
+@media (max-width: 800px) {
+  /* Keep Devarshi + hamburger pinned while the page scrolls. */
+  .editorial-header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 50;
+  }
+
+  /* The hamburger itself morphs into the only close X. */
+  .mobile-menu-button {
+    position: relative;
+    z-index: 60;
+  }
+
+  /* Drawer sits below the fixed control visually, without a second X. */
+  .mobile-drawer-layer { z-index: 40; }
+
+  /* Keep footer copy cleanly below the horizontal rule on narrow screens. */
+  .hero-rule { bottom: 104px; }
+  .hero-footer-left { bottom: 22px; line-height: 1.45; }
+}
+
+@media (max-width: 520px) {
+  .hero-rule { bottom: 108px; }
+  .hero-footer-left { bottom: 20px; }
+}
