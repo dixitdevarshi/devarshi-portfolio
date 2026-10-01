@@ -71,8 +71,8 @@ export default function Background() {
           </div>
 
           <p>
-            How my work in AI developed across study, research, and applied
-            engineering.
+            Where I have studied and worked, and the research I have been part
+            of.
           </p>
         </div>
 

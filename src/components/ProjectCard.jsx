@@ -14,7 +14,7 @@ export default function ProjectCard({ project, onClick }) {
         <strong>{metricValue}</strong>
         <span>{metricLabel}</span>
         {project.caseStudy ? (
-          <a className="card-link" href={project.caseStudy}>View case study <span aria-hidden="true">↗</span></a>
+          <a className="card-link" href={project.caseStudy}>Read write-up <span aria-hidden="true">↗</span></a>
         ) : (
           <button className="card-link" type="button" onClick={onClick}>View details <span aria-hidden="true">↗</span></button>
         )}

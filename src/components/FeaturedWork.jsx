@@ -12,15 +12,15 @@ export default function FeaturedWork() {
             <h2>AI Ticket Triage</h2>
           </div>
           <a className="text-link" href="/projects/ai-ticket-triage">
-            Read case study <span aria-hidden="true">↗</span>
+            Read the write-up
           </a>
         </div>
         <div className="featured-grid">
-          <a className="featured-visual" href="/projects/ai-ticket-triage" aria-label="Read AI Ticket Triage case study">
+          <a className="featured-visual" href="/projects/ai-ticket-triage" aria-label="Read the AI Ticket Triage write-up">
             <img src={screenshot} alt="AI Ticket Triage human review dashboard" loading="lazy" />
           </a>
           <div className="featured-copy">
-            <p className="featured-lead">A human-in-the-loop support pipeline that classifies incoming tickets, evaluates uncertainty, handles multimodal attachments, and routes ambiguous cases for review instead of blindly automating them.</p>
+            <p className="featured-lead">A support pipeline that reads incoming Gmail tickets, classifies topic and urgency, drafts a reply, and sends anything it is unsure about to a person for review.</p>
             <div className="featured-results" aria-label="Project evaluation results">
               <div><strong>94%</strong><span>category accuracy</span></div>
               <div><strong>84%</strong><span>urgency accuracy</span></div>

@@ -15,11 +15,30 @@ import CaseStudy from './components/CaseStudy'
 
 function Home() {
   useEffect(() => {
-    if (window.location.hash !== '#projects') return
-    const timer = window.setTimeout(() => {
-      document.getElementById('projects')?.scrollIntoView({ behavior: 'auto', block: 'start' })
-    }, 1500)
-    return () => window.clearTimeout(timer)
+    const returningToProjects = window.location.hash === '#projects'
+
+    if (returningToProjects) {
+      requestAnimationFrame(() => {
+        document.getElementById('projects')?.scrollIntoView({ behavior: 'auto', block: 'start' })
+      })
+    } else {
+      if (window.location.hash) {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search)
+      }
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    }
+
+    const projects = document.getElementById('projects')
+    if (!projects) return
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting && window.location.hash === '#projects') {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search)
+      }
+    }, { threshold: 0.12 })
+
+    observer.observe(projects)
+    return () => observer.disconnect()
   }, [])
 
   return (
@@ -39,7 +58,14 @@ function Home() {
       <footer className="site-footer">
         <div className="container footer-inner">
           <p>© {new Date().getFullYear()} Devarshi Dixit</p>
-          <a href="/privacy">Privacy</a>
+          <div className="footer-links">
+            <a href="/privacy">Privacy</a>
+            <a href="#hero" onClick={(event) => {
+              event.preventDefault()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+              window.history.replaceState(null, '', window.location.pathname + window.location.search)
+            }}>Move to the top ↑</a>
+          </div>
         </div>
       </footer>
     </>

@@ -1,7 +1,7 @@
 const background = [
   {
     type: 'Education',
-    date: '2025 — Present',
+    date: '2025 to present',
     title: 'M.Sc. Intelligent Interactive Systems',
     organisation: 'Universität Bielefeld',
     location: 'Bielefeld, Germany',
@@ -29,7 +29,7 @@ const background = [
   },
   {
     type: 'Education',
-    date: '2021 — 2025',
+    date: '2021 to 2025',
     title: 'B.Tech. Artificial Intelligence & Data Science',
     organisation: 'Jabalpur Engineering College',
     location: 'India',

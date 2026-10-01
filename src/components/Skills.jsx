@@ -16,9 +16,9 @@ export default function Skills() {
         <div className="skills-heading">
           <div>
             <p className="section-kicker">Capabilities</p>
-            <h2>Skills backed by work.</h2>
+            <h2>Skills</h2>
           </div>
-          <p className="skills-intro">The tools matter less than where they have been applied, so each group points back to the systems or research behind it.</p>
+          <p className="skills-intro">Each group lists the projects and research where I used it.</p>
         </div>
         <div className="skills-editorial">
           {skills.map((group) => (
