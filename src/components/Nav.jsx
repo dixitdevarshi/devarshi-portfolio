@@ -36,7 +36,21 @@ export default function Nav() {
 
   return (
     <header className="editorial-header">
-      <a className="editorial-brand anim-fade-up" style={{animationDelay:'800ms'}} href="#hero">Devarshi</a>
+      <a
+  className="editorial-brand anim-fade-up"
+  style={{ animationDelay: '800ms' }}
+  href="/"
+  onClick={(e) => {
+    e.preventDefault()
+    window.history.replaceState(null, '', window.location.pathname)
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  }}
+>
+  Devarshi
+</a>
       <div className="editorial-desktop-nav">
         <nav aria-label="Primary navigation">
           {links.map((link, i) => <a className="anim-fade-up" style={{animationDelay:`${1000+i*80}ms`}} key={link.href} href={link.href}>{link.label}</a>)}

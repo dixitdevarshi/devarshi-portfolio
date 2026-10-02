@@ -2,7 +2,7 @@ import heroPhoto from '../assets/hero-photo.webp'
 
 export default function Hero() {
   return (
-    <section id="hero" className="editorial-hero">
+    <section id="home" className="editorial-hero">
       <div className="hero-atmosphere anim-fade-in" />
       <div className="hero-marquee-wrap anim-fade-up" style={{animationDelay:'500ms'}} aria-hidden="true">
         <div className="hero-marquee">
