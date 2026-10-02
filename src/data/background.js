@@ -7,8 +7,8 @@ const background = [
     location: 'Bielefeld, Germany',
   },
   {
-    type: 'Upcoming · Work',
-    date: 'Starting October 2026',
+    type: 'Work',
+    date: 'October 2026 to present',
     title: 'Student Assistant',
     organisation: 'Universität Bielefeld',
     description: 'Supporting the welcome and integration of new international students and helping organise activities for the programme.',
@@ -25,7 +25,7 @@ const background = [
     date: '2024',
     title: 'AI Research Intern',
     organisation: 'DRDO DYSL-AI',
-    description: 'Worked on speech recognition and evaluation for conversational AI systems.',
+    description: 'Worked on automatic speech recognition (ASR), including model fine-tuning, benchmarking, and error analysis.',
   },
   {
     type: 'Education',
