@@ -7,12 +7,12 @@ const background = [
     location: 'Bielefeld, Germany',
   },
   {
-    type: 'Work',
-    date: 'October 2026 to present',
-    title: 'Student Assistant',
-    organisation: 'Universität Bielefeld',
-    description: 'Supporting the welcome and integration of new international students and helping organise activities for the programme.',
-  },
+  type: 'Work',
+  date: 'October 2026 to present',
+  title: 'Student Assistant',
+  organisation: 'Universität Bielefeld · 4 h/week',
+  description: 'Supporting the welcome and integration of new international students and helping organise activities for the programme.',
+},
   {
     type: 'Research',
     date: '2025',
